@@ -31,6 +31,7 @@ const MintlifyFrame = () => {
       {!showBackground && <div data-ignore-in-export className={sharedStyles.transparentPattern}></div>}
       {showBackground && (
         <span className={styles.patternWrapper}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={darkMode ? mintlifyPatternDark : mintlifyPatternLight} alt="" className={styles.pattern} />
         </span>
       )}

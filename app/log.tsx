@@ -1,14 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export function Log() {
-  const [logged, setLogged] = useState(false);
-  const [isClient, setIsClient] = useState(false);
+  const loggedRef = useRef(false);
   const isDev = process.env.NODE_ENV === "development";
+
   useEffect(() => {
-    if (isClient && !logged && !isDev) {
-      console.log(`
+    if (isDev || loggedRef.current) {
+      return;
+    }
+
+    console.log(`
 ..-''-'    ..'    ''  '''  '. ' .'-  - '.   .'- --'.-'-'  -''  '  .'''-.''...-
  ..' ' ''''. -.-'' -'.'      ..''..-.  - '''' ..-. ' '-  '' '' .' '' - ' -  .'
 ''  .  .'..-' --   .  .'''- '.  . ---' -  '- .'-  - ' -. -' ''-  --''.. ' -  '
@@ -49,13 +52,8 @@ export function Log() {
 '. . .'  '.''.'..-..''---'  .  ''.--.   ' -' .'.-''-''  https://raycast.com ''
   -.- ---' ''  ..'-.'  '- '-.'  '--''-.. ''-    '  . ''' .'. -'.'-  .'- ''.'.                                                                     
       `);
-      setLogged(true);
-    }
-  }, [logged, isClient, isDev]);
+    loggedRef.current = true;
+  }, [isDev]);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  return <></>;
+  return null;
 }

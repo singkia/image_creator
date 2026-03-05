@@ -31,7 +31,12 @@ const TailwindFrame = () => {
       style={{ padding }}
     >
       {!showBackground && <div data-ignore-in-export className={sharedStyles.transparentPattern}></div>}
-      {showBackground && <img src={beams.src} alt="beams" className={styles.beams} />}
+      {showBackground && (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={beams.src} alt="beams" className={styles.beams} />
+        </>
+      )}
       <div className={styles.beams} />
       <div className={styles.window}>
         {showBackground && (

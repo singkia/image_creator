@@ -26,6 +26,7 @@ const NuxtFrame = () => {
       style={{ padding }}
     >
       {!showBackground && <div data-ignore-in-export className={sharedStyles.transparentPattern}></div>}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src="/stars.svg" alt="stars" className={styles.stars} />
       <div className={styles.window}>
         <span data-frameborder />

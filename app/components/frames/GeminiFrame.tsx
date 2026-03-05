@@ -32,7 +32,12 @@ const GeminiFrame = () => {
       style={{ padding }}
     >
       {!showBackground && <div data-ignore-in-export className={sharedStyles.transparentPattern}></div>}
-      {showBackground && <img src="/stars.svg" alt="stars" className={styles.stars} />}
+      {showBackground && (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/stars.svg" alt="stars" className={styles.stars} />
+        </>
+      )}
       <div className={styles.window}>
         {fileName.length > 0 ? (
           <div className={styles.header}>

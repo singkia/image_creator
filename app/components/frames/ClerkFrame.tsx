@@ -27,7 +27,12 @@ const ClerkFrame = () => {
       style={{ padding }}
     >
       {!showBackground && <div data-ignore-in-export className={sharedStyles.transparentPattern}></div>}
-      {showBackground && <img src={clerkPattern} alt="" className={styles.pattern} />}
+      {showBackground && (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={clerkPattern} alt="" className={styles.pattern} />
+        </>
+      )}
       <div className={styles.window}>
         <div className={styles.code}>
           <Editor />
