@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { LANGUAGES } from "@code/util/languages";
-import { THEMES } from "@code/store/themes";
-import { PADDING_OPTIONS } from "@code/store/padding";
+import { LANGUAGES } from "../../util/languages";
+import { THEMES } from "../../store/themes";
+import { PADDING_OPTIONS } from "../../store/padding";
 
 export async function GET() {
   const languages = Object.entries(LANGUAGES).map(([key, { src, ...rest }]) => ({ id: key, ...rest }));

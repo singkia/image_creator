@@ -10,15 +10,7 @@ import React, {
   ChangeEventHandler,
   FocusEventHandler,
 } from "react";
-import {
-  autoDetectLanguageAtom,
-  codeAtom,
-  codeTitleAtom,
-  editableAtom,
-  hasCustomTitleAtom,
-  selectedLanguageAtom,
-  isCodeExampleAtom,
-} from "../store/code";
+import { codeAtom, isCodeExampleAtom, selectedLanguageAtom } from "../store/code";
 import { FrameContext } from "../store/FrameContextStore";
 import { highlightedLinesAtom, highlighterAtom, showLineNumbersAtom } from "../store";
 import {

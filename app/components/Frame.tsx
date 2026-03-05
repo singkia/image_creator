@@ -1,6 +1,5 @@
 import { useAtom, useAtomValue } from "jotai";
 import React, { useContext, useMemo } from "react";
-import { codeAtom, codeTitleAtom } from "../store/code";
 import { FrameContext } from "../store/FrameContextStore";
 import FlashMessage from "./FlashMessage";
 import {
