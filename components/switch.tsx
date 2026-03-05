@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 依赖 react、@radix-ui/react-switch、@/utils/cn 提供的能力
+ * [OUTPUT]: 对外导出当前文件定义的组件/函数/类型接口
+ * [POS]: components/switch.tsx 在 components 中承担职责：UI 渲染层组件，组合状态与视图输出
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
 "use client";
 
 import * as React from "react";
@@ -14,18 +20,18 @@ const Switch = React.forwardRef<React.ElementRef<typeof SwitchPrimitives.Root>, 
       className={cn(
         "inline-flex h-4 w-7 px-[3px] shrink-0 cursor-default items-center rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-7 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-[#56c2ff] data-[state=unchecked]:bg-gray-7 duration-250",
         color === "purple" ? "data-[state=checked]:bg-purple" : "data-[state=checked]:bg-blue",
-        className
+        className,
       )}
       {...props}
       ref={ref}
     >
       <SwitchPrimitives.Thumb
         className={cn(
-          "pointer-events-none block h-2.5 w-2.5 rounded-full bg-white ring-0 transition-transform data-[state=checked]:translate-x-3 data-[state=unchecked]:translate-x-0 duration-250"
+          "pointer-events-none block h-2.5 w-2.5 rounded-full bg-white ring-0 transition-transform data-[state=checked]:translate-x-3 data-[state=unchecked]:translate-x-0 duration-250",
         )}
       />
     </SwitchPrimitives.Root>
-  )
+  ),
 );
 Switch.displayName = SwitchPrimitives.Root.displayName;
 

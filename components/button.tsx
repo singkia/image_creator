@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 依赖 react、@radix-ui/react-slot、class-variance-authority、@/utils/cn 提供的能力
+ * [OUTPUT]: 对外导出 ButtonProps 等接口
+ * [POS]: components/button.tsx 在 components 中承担职责：UI 渲染层组件，组合状态与视图输出
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
@@ -42,7 +48,7 @@ const buttonVariants = cva(
       size: "medium",
       iconOnly: false,
     },
-  }
+  },
 );
 
 export interface ButtonProps
@@ -55,7 +61,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, iconOnly, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
     return <Comp className={cn(buttonVariants({ variant, size, className, iconOnly }))} ref={ref} {...props} />;
-  }
+  },
 );
 Button.displayName = "Button";
 

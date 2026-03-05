@@ -1,4 +1,10 @@
-import React from 'react';
+/**
+ * [INPUT]: 依赖 react 提供的能力
+ * [OUTPUT]: 对外导出 renderSafePromptContent、validatePromptData 等接口
+ * [POS]: utils/sanitizePromptContent.tsx 在 utils 中承担职责：工具模块中的纯函数单元，被上层组件与路由复用
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
+import React from "react";
 
 /**
  * Safely renders prompt content by parsing placeholders without using dangerouslySetInnerHTML
@@ -8,7 +14,10 @@ import React from 'react';
  * @param placeholderClassName - CSS class name for placeholder styling
  * @returns Array of React nodes with safely rendered content
  */
-export function renderSafePromptContent(content: string, placeholderClassName: string = 'placeholder'): React.ReactNode[] {
+export function renderSafePromptContent(
+  content: string,
+  placeholderClassName: string = "placeholder",
+): React.ReactNode[] {
   // Split content by placeholder pattern but preserve the placeholders
   const parts = content.split(/(\{[^}]+\})/);
 
@@ -38,31 +47,31 @@ export function renderSafePromptContent(content: string, placeholderClassName: s
  * @returns Sanitized prompt object or null if invalid
  */
 export function validatePromptData(promptData: any): any | null {
-  if (!promptData || typeof promptData !== 'object') {
+  if (!promptData || typeof promptData !== "object") {
     return null;
   }
 
   // Whitelist of allowed properties and their expected types
   const allowedProperties = {
-    title: 'string',
-    prompt: 'string',
-    creativity: 'string',
-    icon: 'string',
-    model: 'string',
-    highlightEdits: 'boolean'
+    title: "string",
+    prompt: "string",
+    creativity: "string",
+    icon: "string",
+    model: "string",
+    highlightEdits: "boolean",
   };
 
   const sanitized: any = {};
 
   // Only include whitelisted properties with correct types
-  Object.keys(allowedProperties).forEach(key => {
+  Object.keys(allowedProperties).forEach((key) => {
     if (key in promptData) {
       const expectedType = allowedProperties[key as keyof typeof allowedProperties];
       const value = promptData[key];
 
       if (typeof value === expectedType) {
         // Additional validation for string properties to prevent overly long content
-        if (expectedType === 'string' && typeof value === 'string') {
+        if (expectedType === "string" && typeof value === "string") {
           // Limit string length to prevent DoS attacks
           sanitized[key] = value.slice(0, 10000);
         } else {

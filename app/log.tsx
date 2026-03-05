@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 依赖 react 提供的能力
+ * [OUTPUT]: 对外导出 Log 等接口
+ * [POS]: app/log.tsx 在 app 中承担职责：UI 渲染层组件，组合状态与视图输出
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
 "use client";
 
 import { useEffect, useRef } from "react";

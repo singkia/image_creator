@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 依赖 hotkeys-js、react 提供的能力
+ * [OUTPUT]: 对外导出 default 等接口
+ * [POS]: utils/useHotkeys.ts 在 utils 中承担职责：工具模块中的 Hook，封装可复用交互逻辑
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
 import hotkeys, { KeyHandler } from "hotkeys-js";
 import { useEffect } from "react";
 

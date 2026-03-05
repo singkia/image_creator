@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 依赖 react、shiki/wasm、./store、jotai 提供的能力
+ * [OUTPUT]: 对外导出 Code 等接口
+ * [POS]: app/code.tsx 在 app 中承担职责：UI 渲染层组件，组合状态与视图输出
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
 "use client";
 import { useEffect } from "react";
 import getWasm from "shiki/wasm";

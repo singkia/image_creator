@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 依赖 lodash.debounce、next/navigation、react 提供的能力
+ * [OUTPUT]: 对外导出 useSectionInViewObserver、useSectionInView 等接口
+ * [POS]: utils/useSectionInViewObserver.tsx 在 utils 中承担职责：工具模块中的 Hook，封装可复用交互逻辑
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
 // Adapted from Vlad's work for the WorkOS docs.
 
 import debounce from "lodash.debounce";

@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 依赖 react、@vercel/analytics、../assets/icons/image-16.svg、../assets/icons/link-16.svg 提供的能力
+ * [OUTPUT]: 对外导出 default 等接口
+ * [POS]: app/components/ExportButton.tsx 在 app/components 中承担职责：UI 渲染层组件，组合状态与视图输出
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
 import React, { MouseEventHandler, useContext, useState } from "react";
 import { track } from "@vercel/analytics";
 

@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 依赖 @/utils/cn、class-variance-authority、react 提供的能力
+ * [OUTPUT]: 对外导出 InputProps 等接口
+ * [POS]: components/input.tsx 在 components 中承担职责：UI 渲染层组件，组合状态与视图输出
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
 import { cn } from "@/utils/cn";
 import { VariantProps, cva } from "class-variance-authority";
 import React, { Children, InputHTMLAttributes } from "react";
@@ -22,7 +28,7 @@ const inputVariants = cva(
       variant: "classic",
       size: "medium",
     },
-  }
+  },
 );
 
 export interface InputProps
@@ -37,7 +43,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {children}
       </label>
     );
-  }
+  },
 );
 Input.displayName = "Input";
 
@@ -52,7 +58,7 @@ const InputSlot = React.forwardRef<HTMLDivElement, SlotProps>(({ className, side
         "shrink-0 text-gray-a10",
         side === "right" && "-order-none",
         side === "left" && "-order-1",
-        className
+        className,
       )}
       ref={ref}
       {...props}

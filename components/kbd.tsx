@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 依赖 @/utils/cn 提供的能力
+ * [OUTPUT]: 对外导出 Kbd、Kbds、Shortcut 等接口
+ * [POS]: components/kbd.tsx 在 components 中承担职责：UI 渲染层组件，组合状态与视图输出
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
 import { cn } from "@/utils/cn";
 
 export function Kbd({ children, size = "small" }: { children: React.ReactNode; size?: "small" | "medium" }) {
@@ -6,7 +12,7 @@ export function Kbd({ children, size = "small" }: { children: React.ReactNode; s
       className={cn(
         `inline-flex items-center justify-center px-2 font-medium bg-gray-a4 tracking-[0.1px] font-sans w-auto text-gray-a10`,
         size === "small" && "h-[18px] px-1 text-[10px] rounded-[3px] min-w-[18px]",
-        size === "medium" && "h-[28px] px-2 text-xs rounded-md min-w-[28px]"
+        size === "medium" && "h-[28px] px-2 text-xs rounded-md min-w-[28px]",
       )}
     >
       {children}

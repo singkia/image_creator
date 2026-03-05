@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 依赖 react、@base-ui/react/combobox、@/utils/cn、@raycast/icons 提供的能力
+ * [OUTPUT]: 对外导出 ComboboxTriggerProps、ComboboxInputProps、ComboboxInputContainerProps、ComboboxContentProps、ComboboxListProps 等接口
+ * [POS]: components/combobox.tsx 在 components 中承担职责：UI 渲染层组件，组合状态与视图输出
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
 "use client";
 
 import * as React from "react";

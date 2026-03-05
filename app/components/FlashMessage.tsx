@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 依赖 react、jotai、react-transition-group、../store/flash 提供的能力
+ * [OUTPUT]: 对外导出 default 等接口
+ * [POS]: app/components/FlashMessage.tsx 在 app/components 中承担职责：UI 渲染层组件，组合状态与视图输出
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
 import React, { useEffect, useRef, useState, useMemo } from "react";
 import { useAtom } from "jotai";
 import { CSSTransition } from "react-transition-group";

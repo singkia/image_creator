@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 依赖 @vercel/analytics/react、next/font/google、classnames 与本地 UI 组件
+ * [OUTPUT]: 导出 metadata、viewport 与根布局组件 RootLayout
+ * [POS]: app 根布局，负责全局样式、全局 Provider 与基础埋点注入
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
 import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -7,14 +13,6 @@ import { TooltipProvider } from "@/components/tooltip";
 import { Viewport } from "next";
 import { Log } from "./log";
 import { Toaster } from "@/components/toast";
-/**
- * [INPUT]: 依赖 react 的 ReactNode 类型，依赖 next/font/google 的 Inter/Outfit 字体
- * [OUTPUT]: 导出根布局组件 RootLayout
- * [POS]: 应用程序的最外层布局，注入全局样式和状态
- * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
- */
-import type { ReactNode } from "react";
-import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500"], display: "swap" });
 

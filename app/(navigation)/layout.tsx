@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 依赖 classnames、next/font/local、react 提供的能力
+ * [OUTPUT]: 对外导出 default、NavigationLayout 等接口
+ * [POS]: app/(navigation)/layout.tsx 在 app/(navigation) 中承担职责：UI 渲染层组件，组合状态与视图输出
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
 import {
   Fira_Code,
   Geist_Mono,

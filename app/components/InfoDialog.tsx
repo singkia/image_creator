@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 依赖 @/components/button、@/components/dialog、@/components/kbd、@/components/social-footer 提供的能力
+ * [OUTPUT]: 对外导出 InfoDialog 等接口
+ * [POS]: app/components/InfoDialog.tsx 在 app/components 中承担职责：UI 渲染层组件，组合状态与视图输出
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
 import { Button } from "@/components/button";
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/dialog";
 import { Shortcut } from "@/components/kbd";

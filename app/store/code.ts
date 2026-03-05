@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 依赖 jotai、js-base64、highlight.js、jotai-location 提供的能力
+ * [OUTPUT]: 对外导出 default、Command、autoDetectLanguageAtom、selectedLanguageAtom、codeExampleAtom 等接口
+ * [POS]: app/store/code.ts 在 app/store 中承担职责：状态管理模块中的原子/状态容器，负责单一状态域
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
 import { atom } from "jotai";
 import { Base64 } from "js-base64";
 import hljs from "highlight.js";

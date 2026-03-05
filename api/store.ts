@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 依赖同模块与运行时基础能力
+ * [OUTPUT]: 对外导出 Extension、getExtensions 等接口
+ * [POS]: api/store.ts 在 api 中承担职责：模块内部实现单元，承担单一职责并对外暴露稳定接口
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
 // Basic icon type
 type Icons = {
   light?: string;

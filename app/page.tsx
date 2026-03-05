@@ -4,14 +4,6 @@
  * [POS]: app/(navigation)/(code) 的入口页面，负责 SEO 和核心 UI 挂载
  * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
  */
-/**
- * [INPUT]: 依赖 react 的 ReactNode 类型，依赖 next/font/google 的 Inter/Outfit 字体
- * [OUTPUT]: 导出根布局组件 RootLayout
- * [POS]: 应用程序的最外层布局，注入全局样式和状态
- * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
- */
-import type { ReactNode } from "react";
-
 import type { Metadata } from "next";
 
 import OgPhoto from "./assets/og.png";

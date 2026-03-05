@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 依赖 sonner 提供的能力
+ * [OUTPUT]: 对外导出当前文件定义的组件/函数/类型接口
+ * [POS]: components/toast.tsx 在 components 中承担职责：UI 渲染层组件，组合状态与视图输出
+ * [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+ */
 "use client";
 import { Toaster as Sonner, toast } from "sonner";
 
